@@ -9,6 +9,16 @@ The two most notable differences between Version 3 and Version 4 of the DCC Half
 
 ---------------
 
+Dungeon Crawl Classics Halfling Character Generator Version 4:
+
+https://www.oldschooladventures.org/dcc2/more/classes/halfling/
+
+---------------
+
+Update 1.01: 2023-03-03
+
+The completed DCC Halfling Character Generator has been uploaded. As well, a link to a live version of the generator has been added to the ReadMe file.
+
 Initial commit: 2023-03-02
 
 The initial commit for the DCC Halfling Character Generator Version 4.
