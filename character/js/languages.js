@@ -1,24 +1,18 @@
 /*
-addBonusLanguages() - returns Randomly selected Dwarf Bonus Languages
+addBonusLanguages() - returns Randomly selected Halfling Bonus Languages
 */
 function addBonusLanguages() {
 	var bonusLanguages = [
 		{"language": "Alignment Tongue"},
-		{"language": "Halfling"},
+		{"language": "Dwarf"},
 		{"language": "Elf"},
 		{"language": "Gnome"},
 		{"language": "Bugbear"},
 		{"language": "Goblin"},
-		{"language": "Gnoll"},
 		{"language": "Hobgoblin"},
 		{"language": "Kobold"},
-		{"language": "Minotaur"},
-		{"language": "Ogre"},
-		{"language": "Orc"},
-		{"language": "Troglodyte"},
-		{"language": "Dragon"},
-		{"language": "Griffin"},
-		{"language": "Bear"},
+		{"language": "Pixie"},
+		{"language": "Ferret"},
 		{"language": "Undercommon"}
 			];
     return bonusLanguages[Math.floor(Math.random() * bonusLanguages.length)]; 

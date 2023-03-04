@@ -5,19 +5,18 @@ function getOccupation(){
 	var occupations = [
 		//Dwarves 0 - 10
         // 4 - Herder
-        
-		{"occupation": "Dwarf Apothecarist", "race": "Dwarf", "trainedWeapon": "Cudgel (as Staff)", "damage": "1d4", "tradeGoods": "Steel Vial"},
-		{"occupation": "Dwarf Blacksmith", "race": "Dwarf", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Mithril, 1 oz."},
-		{"occupation": "Dwarf Riveter", "race": "Dwarf", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Mithril, 1 oz."},
-		{"occupation": "Dwarf Chestmaker", "race": "Dwarf", "trainedWeapon": "Chisel (as Dagger)", "damage": "1d4", "tradeGoods": "Wood, 10 lbs."},
-		{"occupation": "Dwarf Herder", "race": "Dwarf", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Sow"},
-		{"occupation": "Dwarf Miner", "race": "Dwarf", "trainedWeapon": "Pick (as Club)", "damage": "1d4", "tradeGoods": "Lantern"},
-		{"occupation": "Dwarf Linkman", "race": "Dwarf", "trainedWeapon": "Pick (as Club)", "damage": "1d4", "tradeGoods": "Lantern"},
-		{"occupation": "Dwarf Mushroom Farmer", "race": "Dwarf", "trainedWeapon": "Shovel (as Staff)", "damage": "1d4", "tradeGoods": "Sack"},
-		{"occupation": "Dwarf Rat-Catcher", "race": "Dwarf", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Net"},
-		{"occupation": "Dwarf Stonemason", "race": "Dwarf", "trainedWeapon": "Hammer (as club)", "damage": "1d4", "tradeGoods": "Fine Stones, 10 lbs."},
-		{"occupation": "Dwarf Mason", "race": "Dwarf", "trainedWeapon": "Hammer (as club)", "damage": "1d4", "tradeGoods": "Fine Stones, 10 lbs."}
-		/*
+        /*
+		{"occupation": "Dwarven Apothecarist", "race": "Dwarf", "trainedWeapon": "Cudgel (as Staff)", "damage": "1d4", "tradeGoods": "Steel Vial"},
+		{"occupation": "Dwarven Blacksmith", "race": "Dwarf", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Mithril, 1 oz."},
+		{"occupation": "Dwarven Riveter", "race": "Dwarf", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Mithril, 1 oz."},
+		{"occupation": "Dwarven Chestmaker", "race": "Dwarf", "trainedWeapon": "Chisel (as Dagger)", "damage": "1d4", "tradeGoods": "Wood, 10 lbs."},
+		{"occupation": "Dwarven Herder", "race": "Dwarf", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Sow"},
+		{"occupation": "Dwarven Miner", "race": "Dwarf", "trainedWeapon": "Pick (as Club)", "damage": "1d4", "tradeGoods": "Lantern"},
+		{"occupation": "Dwarven Linkman", "race": "Dwarf", "trainedWeapon": "Pick (as Club)", "damage": "1d4", "tradeGoods": "Lantern"},
+		{"occupation": "Dwarven Mushroom Farmer", "race": "Dwarf", "trainedWeapon": "Shovel (as Staff)", "damage": "1d4", "tradeGoods": "Sack"},
+		{"occupation": "Dwarven Rat-Catcher", "race": "Dwarf", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Net"},
+		{"occupation": "Dwarven Stonemason", "race": "Dwarf", "trainedWeapon": "Hammer (as club)", "damage": "1d4", "tradeGoods": "Fine Stones, 10 lbs."},
+		{"occupation": "Dwarven Mason", "race": "Dwarf", "trainedWeapon": "Hammer (as club)", "damage": "1d4", "tradeGoods": "Fine Stones, 10 lbs."},
 		//Elves 11 - 20
 		// 14 - Falconer
 		{"occupation": "Elven Artisan", "race": "Elf", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Clay, 1 lbs."},
@@ -29,8 +28,9 @@ function getOccupation(){
 		{"occupation": "Elven Glassblower", "race": "Elf", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Glass Beads"},
 		{"occupation": "Elven Navigator", "race": "Elf", "trainedWeapon": "Bow", "damage": "1d6", "tradeGoods": "Spyglass"},
 		{"occupation": "Elven Sage", "race": "Elf", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Parchment and Quill Pen"},
-		{"occupation": "Elven Scholar", "race": "Elf", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Parchment and Quill Pen"},
-		//Halflings 21 - 30
+		{"occupation": "Elven Scholar", "race": "Elf", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Parchment and Quill Pen"}
+		//Halflings 21 - 30*/
+		
 		{"occupation": "Halfling Chicken Butcher", "race": "Halfling", "trainedWeapon": "Hand Axe", "damage": "1d6", "tradeGoods": "Chicken Meat, 5 lbs."},
 		{"occupation": "Halfling Dyer", "race": "Halfling", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Fabric, 3 yards"},
 		{"occupation": "Halfling Tailor", "race": "Halfling", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Fabric, 3 yards"},
@@ -41,11 +41,10 @@ function getOccupation(){
 		{"occupation": "Halfling Moneylender", "race": "Halfling", "trainedWeapon": "Short Sword", "damage": "1d6", "tradeGoods": "5 gp, 10 sp, 200 cp"},
 		{"occupation": "Halfling Trader", "race": "Halfling", "trainedWeapon": "Short Sword", "damage": "1d6", "tradeGoods": "20 sp"},
         {"occupation": "Halfling Vagrant", "race": "Halfling", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Begging Bowl"},
-        */
+        /*
 		//Humans 31 -
 		//Humans 31 - 40 Alchemist to Caravan Guard
 		// 32 - Animal Trainer
-		/*
 		{"occupation": "Alchemist", "race": "Human", "trainedWeapon": "Staff", "damage": "1d4", "tradeGoods": "Oil, 1 flask"},
 		{"occupation": "Animal Trainer", "race": "Human", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Pony"},
 		{"occupation": "Armourer", "race": "Human", "trainedWeapon": "Hammer (as Club)", "damage": "1d4", "tradeGoods": "Iron Helmet"},

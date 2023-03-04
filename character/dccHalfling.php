@@ -203,14 +203,14 @@
         {
             rsort($abilityScoreArray);
 
-            $strength = $abilityScoreArray[0];
-            $agility = $abilityScoreArray[2];
-            $stamina = $abilityScoreArray[1];
+            $strength = $abilityScoreArray[2];
+            $agility = $abilityScoreArray[1];
+            $stamina = $abilityScoreArray[3];
             $personality = $abilityScoreArray[4];
             $intelligence = $abilityScoreArray[5];
-            $luck = $abilityScoreArray[3];
+            $luck = $abilityScoreArray[0];
 
-            $optimizeAbilityScoreMessage = "<br/>Ability Scores optimized in the order of Str, Sta, Agi, Luck, Per, Int.";
+            $optimizeAbilityScoreMessage = "<br/>Ability Scores optimized in the order of Luck, Agi, Str, Sta, Per, Int.";
         }
         else
         {
@@ -271,7 +271,7 @@
        $totalAcCheckPen = $armourCheckPen + $shieldCheckPen;
        $speedPenality = $armourSpeedPen;
 
-       $speed = 30 - $armourSpeedPen;
+       $speed = 20 - $armourSpeedPen;
 
        $reflexBase = savingThrowReflex($level);
        $fortBase = savingThrowFort($level);
@@ -279,44 +279,36 @@
 
        $criticalDie = criticalDie($level);
 
-      // $attackBonus = attackBonus($level);
-       $deedDie = deedDie($level);
+       $attackBonus = attackBonus($level);
       // $threatRange = threatRange($level);
 
        $actionDice = actionDice($level);
 
        $title = title($level, $alignment);
        
+       $sneakHide = sneakHide($level);
        
-       if(isset($_POST["theLuckyWeapon"]))
-       {
-           $luckyWeaponNumberString = $_POST["theLuckyWeapon"];
-       } 
-
-       $luckyWeaponNumber = (int)$luckyWeaponNumberString;
-       $luckyWeapon = getWeapon($luckyWeaponNumber)[0];
-
 
         $weaponArray = array();
         $weaponNames = array();
         $weaponDamage = array();
     
-    //For Random Select gear
-    if(isset($_POST['thecheckBoxRandomWeaponsV3']) && $_POST['thecheckBoxRandomWeaponsV3'] == 1) 
-    {
-        $weaponArray = getRandomWeapons($luckyWeaponNumber);
-
-    }
-    else
-    {
-        if(isset($_POST["theWeapons"]))
+        //For Random Select weapon
+        if(isset($_POST['thecheckBoxRandomWeaponsV3']) && $_POST['thecheckBoxRandomWeaponsV3'] == 1) 
         {
-            foreach($_POST["theWeapons"] as $weapon)
+            $weaponArray = getRandomWeapons();
+
+        }
+        else
+        {
+            if(isset($_POST["theWeapons"]))
             {
-                array_push($weaponArray, $weapon);
+                foreach($_POST["theWeapons"] as $weapon)
+                {
+                    array_push($weaponArray, $weapon);
+                }
             }
         }
-    }
 
     
     foreach($weaponArray as $select)
@@ -560,10 +552,10 @@
             ?>
         </span>
 
-        
-        <span id="deedDie">
+                
+        <span id="attackBonus">
             <?php
-                echo $deedDie;
+                echo "+" . $attackBonus;
             ?>
         </span>
 
@@ -579,6 +571,12 @@
         </span>
 
 
+        <span id="sneakHide">
+            <?php
+                echo "+" . $sneakHide;
+            ?>
+        </span>
+        
         
         <span id="title">
             <?php
@@ -590,11 +588,6 @@
         
 		<p id="birthAugur"><span id="luckySign"></span>: <span id="luckyRoll"></span> (<span id="LuckySignBonus"></span>)</p>
         
-        <span id="luckyWeapon">
-            <?php
-                echo $luckyWeapon;
-            ?>
-        </span>
 
         
         <span id="melee"></span>
@@ -722,14 +715,14 @@
             "addLanguages": "Common, Halfling" + bonusLanguages,
             "armourClass": <?php echo $totalAcDefense ?> + baseAC,
             "hp": getHitPoints (level, staminaMod) + hitPointAdjustPerLevel(birthAugur,  luckMod),
-			"melee": strengthMod + meleeAdjust(birthAugur, luckMod),
-			"range": agilityMod + rangeAdjust(birthAugur, luckMod),
+			"melee": <?php echo $attackBonus ?> + strengthMod + meleeAdjust(birthAugur, luckMod),
+			"range": <?php echo $attackBonus ?> + agilityMod + rangeAdjust(birthAugur, luckMod),
 			"meleeDamage": strengthMod + meleeDamageAdjust(birthAugur, luckMod),
 			"rangeDamage": rangeDamageAdjust(birthAugur, luckMod),
             "reflex": <?php echo $reflexBase ?> + agilityMod + adjustRef(birthAugur, luckMod),
             "fort": <?php echo $fortBase ?> + staminaMod + adjustFort(birthAugur,luckMod),
             "will": <?php echo $willBase ?> + personalityMod + adjustWill(birthAugur, luckMod),
-            "initiative": <?php echo $level ?> + agilityMod + adjustInit(birthAugur, luckMod)
+            "initiative": agilityMod + adjustInit(birthAugur, luckMod)
 
 		};
 	    if(halflingCharacter.hitPoints <= 0 ){

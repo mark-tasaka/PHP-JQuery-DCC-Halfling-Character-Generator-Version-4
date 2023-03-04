@@ -1,5 +1,5 @@
 /*HitPoints randomly generate hit points
-Dwarf*/
+Halfling*/
 
 function getHitPoints (level, staminaMod)
 {
@@ -13,11 +13,11 @@ function getHitPoints (level, staminaMod)
             {
 
                 var hpEachLevel = 0;
-                hpEachLevel = Math.floor((Math.random() * 10) + 1) + staminaMod;
+                hpEachLevel = Math.floor((Math.random() * 6) + 1) + staminaMod;
 
-                if(hpEachLevel < 5)
+                if(hpEachLevel < 3)
                     {
-                        hpEachLevel = 5;
+                        hpEachLevel = 3;
                     }
 
                 hitPoints += hpEachLevel;
